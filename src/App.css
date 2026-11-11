@@ -1,0 +1,940 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+:root {
+    font-family: 'Patrick Hand', cursive;
+    color: #493b3d;
+    background: #FFF4DE;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
+
+    --pink: #FFCED8;
+    --pink-light: #FFDDDD;
+    --cream: #FFF4DE;
+    --peach: #FFE8C4;
+
+    --purple: #d98296;
+    --purple-dark: #c66e83;
+    --muted: #927f7f;
+    --border: #f2dfd8;
+    --surface: #fffdf9;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   HEADER DAN NAVIGASI
+========================= */
+
+.topbar {
+    height: 76px;
+    background: rgba(255, 255, 255, .95);
+    border-bottom: 1px solid var(--border);
+}
+
+.topbar-inner {
+    max-width: 1160px;
+    height: 100%;
+    padding: 0 28px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -.8px;
+}
+
+.brand > span:last-child > span {
+    color: var(--purple);
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    color: white;
+    background: var(--purple);
+    border-radius: 11px;
+    font-size: 20px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 10px 15px;
+    border-radius: 9px;
+
+    color: #77788d;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #d98296;
+    color: black;
+}
+
+/* =========================
+   KONTEN UTAMA
+========================= */
+
+.main-container {
+    width: 100%;
+    max-width: 1160px;
+    padding: 46px 28px 64px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.page {
+    animation: appear .3s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: var(--purple);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 9px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(27px, 4vw, 34px);
+    line-height: 1.25;
+    letter-spacing: -1.2px;
+}
+
+h1 span {
+    color: #f3b84d;
+    font-size: 25px;
+}
+
+.page-subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================
+   TOMBOL
+========================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    min-height: 43px;
+    padding: 0 17px;
+
+    border: 0;
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+    transition: .2s;
+}
+
+.button-primary {
+    color: white;
+    background: var(--purple);
+    box-shadow: 0 5px 13px rgba(101, 88, 211, .17);
+}
+
+.button-primary:hover {
+    background: var(--purple-dark);
+    transform: translateY(-1px);
+}
+
+/* =========================
+   KARTU STATISTIK
+========================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    min-height: 125px;
+    padding: 22px;
+
+    background: #fffdf9;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.stat-icon {
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+
+    border-radius: 13px;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.stat-icon.purple {
+    color: #2f291e;
+    background: #fbeed6;
+}
+
+.stat-icon.orange {
+    color: #e69b38;
+    background: #fff5e8;
+}
+
+.stat-icon.green {
+    color: #2da77a;
+    background: #eaf8f1;
+}
+
+.stat-label {
+    margin: 0 0 4px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stat-number {
+    margin: 0 0 2px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.stat-caption {
+    margin: 0;
+    color: #a2a2b1;
+    font-size: 10px;
+}
+
+/* =========================
+   PANEL DAN DAFTAR TUGAS
+========================= */
+
+.content-panel,
+.task-form {
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 19px;
+}
+
+.section-heading h2,
+.form-heading h2 {
+    margin: 0 0 5px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 17px;
+    letter-spacing: -.3px;
+}
+
+.section-heading p,
+.form-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.text-link {
+    color: #fbeed6;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    padding: 16px 2px;
+    border-top: 1px solid #f0f0f5;
+}
+
+/* =========================
+   TOMBOL SELESAI
+========================= */
+
+.check-button {
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 21px;
+    width: 21px;
+    height: 21px;
+    margin-top: 1px;
+    padding: 0;
+
+    border: 1.5px solid #d7d6e4;
+    border-radius: 7px;
+
+    color: white;
+    background: white;
+    font-size: 13px;
+}
+
+.check-button:hover {
+    border-color: #fbeed6;
+}
+
+.check-button.checked {
+    border-color: #39ad81;
+    background: #39ad81;
+}
+
+.task-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.task-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.task-title-row h3 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.category-tag {
+    padding: 4px 8px;
+
+    color: #7568c8;
+    background: #f2f0ff;
+    border-radius: 6px;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.task-description {
+    margin: 6px 0;
+    color: #85869a;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.task-date {
+    margin: 7px 0 0;
+    color: #a0a0ae;
+    font-size: 10px;
+}
+
+.task-done .task-title-row h3 {
+    color: #a4a4b0;
+    text-decoration: line-through;
+}
+
+/* =========================
+   HAPUS TUGAS
+========================= */
+
+.delete-button {
+    width: 28px;
+    height: 28px;
+
+    border: 0;
+    border-radius: 8px;
+
+    color: #aaaaba;
+    background: transparent;
+    font-size: 21px;
+    line-height: 1;
+}
+
+.delete-button:hover {
+    color: #d65365;
+    background: #fff0f1;
+}
+
+/* =========================
+   KONDISI KOSONG
+========================= */
+
+.empty-state {
+    padding: 36px 12px;
+    text-align: center;
+}
+
+.empty-icon {
+    display: inline-grid;
+    place-items: center;
+
+    width: 46px;
+    height: 46px;
+    margin-bottom: 12px;
+
+    color: var(--purple);
+    background: #f1efff;
+    border-radius: 14px;
+    font-size: 23px;
+}
+
+.empty-state h3 {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.empty-state p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================
+   HALAMAN DAFTAR TUGAS
+========================= */
+
+.page-header {
+    margin-bottom: 27px;
+}
+
+.page-header h1 {
+    margin-bottom: 7px;
+}
+
+.tasks-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(280px, .85fr);
+    align-items: start;
+    gap: 20px;
+}
+
+.tasks-panel {
+    min-width: 0;
+}
+
+.filter-select,
+.form-row select,
+.form-row input,
+.task-form input,
+.task-form textarea {
+    width: 100%;
+    padding: 11px 12px;
+
+    color: #333247;
+    background: #fff;
+    border: 1px solid #e8e8f0;
+    border-radius: 8px;
+    outline: none;
+
+    font-size: 12px;
+}
+
+.filter-select {
+    width: auto;
+    min-width: 135px;
+}
+
+/* =========================
+   FORM TAMBAH TUGAS
+========================= */
+
+.task-form {
+    padding: 21px;
+}
+
+.form-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-heading h2 {
+    font-size: 16px;
+}
+
+.form-plus {
+    display: grid;
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    color: var(--purple);
+    background: #f1efff;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+.task-form label {
+    display: block;
+    margin: 13px 0 7px;
+
+    color: #55556b;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.task-form label span {
+    color: #e16d7c;
+}
+
+.task-form input:focus,
+.task-form textarea:focus,
+.task-form select:focus {
+    border-color: #9b91eb;
+    box-shadow: 0 0 0 3px #f0efff;
+}
+
+.task-form textarea {
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.form-submit {
+    width: 100%;
+    margin-top: 19px;
+}
+
+/* =========================
+   KARTU TIPS
+========================= */
+
+.tip-card {
+    margin-top: 14px;
+    padding: 17px;
+
+    background: #f0efff;
+    border: 1px solid #e8e5ff;
+    border-radius: 12px;
+}
+
+.tip-card span {
+    color: #6659c7;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.tip-card p {
+    margin: 7px 0 0;
+    color: #77718f;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* =========================
+   HALAMAN TENTANG
+========================= */
+
+.about-page {
+    max-width: 850px;
+    margin: auto;
+}
+
+.about-hero {
+    padding: 40px 20px 35px;
+    text-align: center;
+}
+
+.about-mark {
+    display: grid;
+    place-items: center;
+
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 20px;
+
+    color: white;
+    background: var(--purple);
+    border-radius: 18px;
+    font-size: 30px;
+}
+
+.about-hero h1 {
+    max-width: 620px;
+    margin: 0 auto 13px;
+}
+
+.about-hero .page-subtitle {
+    max-width: 650px;
+    margin: auto;
+}
+
+.about-content {
+    margin-top: 15px;
+}
+
+.about-content > h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+}
+
+.about-content > p {
+    color: #77788d;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.about-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.about-feature-grid > div {
+    padding: 17px;
+    background: #fafaff;
+    border: 1px solid #efeff8;
+    border-radius: 11px;
+}
+
+.about-feature-grid strong {
+    color: var(--purple);
+    font-size: 11px;
+}
+
+.about-feature-grid h3 {
+    margin: 10px 0 5px;
+    font-size: 13px;
+}
+
+.about-feature-grid p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* =========================
+   HALAMAN 404
+========================= */
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 55vh;
+    text-align: center;
+}
+
+.not-found > span {
+    color: #e8e5ff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(90px, 17vw, 150px);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.not-found h1 {
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+.not-found p {
+    margin-bottom: 22px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 22px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    color: #a1a1b0;
+    font-size: 10px;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 760px) {
+    .topbar {
+        height: auto;
+    }
+
+    .topbar-inner {
+        min-height: 70px;
+        padding: 13px 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .navigation {
+        width: 100%;
+        justify-content: space-between;
+        gap: 3px;
+    }
+
+    .nav-link {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+
+    .main-container {
+        padding: 32px 19px 45px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        min-height: 95px;
+        padding: 16px;
+    }
+
+    .tasks-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .about-feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media (max-width: 430px) {
+    .content-panel,
+    .task-form {
+        padding: 17px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+    .filter-heading {
+        flex-direction: column;
+    }
+
+    .filter-select {
+        width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .task-title-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+h1 {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 42px;
+}
+/* Bayangan pink pada card */
+.stat-card,
+.content-panel,
+.task-form,
+.about-feature-grid > div {
+    box-shadow: 5px 5px 0px rgba(255, 206, 216, 0.45);
+    transition: .2s ease;
+     border: 3px dashed #FFCED8;
+}
+
+/* Efek ketika card disentuh kursor */
+.stat-card:hover,
+.content-panel:hover,
+.task-form:hover,
+.about-feature-grid > div:hover {
+    box-shadow: 8px 5px 0px  rgba(255, 206, 216, 0.65);
+     border: 5px dashed #FFCED8;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.brand-bunny {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+}
+.check-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 3px;
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+}
+
+.task-bunny {
+    width: 34px;
+    height: 34px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.check-button:hover .task-bunny {
+    transform: scale(1.12);
+}
+
+.check-button.checked .task-bunny {
+    opacity: 0.55;
+    filter: grayscale(0.35);
+}
+.check-button.checked {
+    background-color: #FFCED8;
+    border-radius: 50%;
+}
+
+.check-button.checked .task-bunny {
+    opacity: 1;
+    filter: none;
+}
+.topbar {
+    border-bottom: 10px dashed #FFCED8;
+}
+.footer {
+    border-top: 10px dashed #FFCED8;
+    background-color: white;
+}
+/* Background kategori tugas */
+.category-tag {
+    background-color: #FFF4DE;
+    color: #927F7F;
+}
+
+/* Belajar */
+.category-tag:has(+ *) {
+    background-color: #FFDDDD;
+}
+
